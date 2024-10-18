@@ -1,0 +1,123 @@
+Slip 1 
+Powered by Akhil Bharatiya 
+Bereozgar Parishad 
+1. Use Python code to evaluate each of the following expression. 
+a. 20 modulus 2 + 7 - (3+7) × 20 ÷ 2 
+In [5]: 20%2+7-(3+7) *20/2 
+Out[5]: -93.0 
+b.30 x 10 floor division 3 + 10 modulus 3 
+In [8]: 30*10//3+10%3 
+Out [8]: 101 
+c.25 - 24 + 4 floor division 4 
+In [11]: 2**5-2**4+4//4 
+Out[11]: 17 
+2. Write Python code to repeat the following string 9 times using the string operator 
+In [14]: print(("PYTHON\n")*9) 
+
+In [16]: print(("Mathematics\n")*9) 
+
+3. Write Python program to generate the square of numbers from 1 to 10. 
+In [19] for i in range(1,11): 
+print(i**2) 
+
+Q.2. Attempt any two of the following. 
+1. Using Python code construct the following matrices. 
+1. An identity matrix of order 10 × 10. 
+In [24]: from sympy import * 
+
+2. Zero matrix of order 7 x 3 
+In [27]: zeros (7,3) 
+
+3. Ones matrix of order 5 x 4. 
+In [30] ones (5,4) 
+
+2. Write Python program to find the 10 term of the sequence of function f(x) 
+In [33]: for x in range(1,11): 
+y=x**2+x 
+print(y) 
+
+3. Generate all the prime numbers between 1 to 100 using Python code. 
+In [36] for i in range (2,101): 
+for j in range(2,101): 
+if i%j==0: 
+if i==j: 
+break 
+print(i,end=",") 
+
+Q.3. a. Attempt any oneof the following. 
+
+1. Write Python program to estimate the value of the integral ƒ sin(x)dx using Simpson's (1) rule (n=6). 
+In [40]: from math import * 
+
+In [42]: def Simpsons 13 (a,b,n): 
+h=(b-a)/n 
+I=f(a)+f(b) 
+for i in range (1,n): 
+k=a+i*h 
+if i%2==0: 
+I=I+2*f(k) 
+else: 
+I=I+4*f(k) 
+I=I* (h/3) 
+return I 
+
+In [44]: def f(x): 
+return sin(x) 
+ 
+In [46]: Simpsons13(0,pi,6) 
+
+2. Write Python program to evaluate interpolate value f(3) of the given data by Langranges method. 
+  
+In [49]: def lagrange_interpolation (x, y, x_new): 
+n = len(x) 
+result = 0.0 
+for i in range(n): 
+term = y[i] 
+for j in range(n): 
+if j != i: 
+term *= (x_new - x[j]) / (x[i] - x[j]) result += term 
+return result 
+def interpolate(x_values, y_values, x_new): 
+if len(x_values) != len(y_values) or not x_values: 
+raise ValueError("x_values and y_values must have the same non-zero length.") result lagrange_interpolation(x_values, y_values, x_new) 
+print (f"Interpolated value at {x_new}: {result}") 
+
+In [51]: interpolate([0,1, 2, 5], [5,13,22,129], 3) 
+
+b. Attempt any one of the following. 
+Write Python program to obtained the approximate real root of x-4x-9=0 by using Regula-falsi method. 
+In [55]: def falsePosition(a,b,e): 
+i = 1 
+print('\n** FALSE POSTION METHOD IMPLEMENTATION **') 
+condition = True 
+while condition: 
+c = (a*f(b)-b*f(a))/(f(b) - f(a)) 
+print('Iteration-%d, c = %0.6f and f(c) = %0.6f' % (i,c,f(c))) 
+if f(a) f(c) <0:
+b = c
+else: 
+a = C 
+i = i + 1 
+condition = abs(f(c)) > e 
+print('\n required root is: %0.8f' % c) 
+
+In [57]: def f(x): 
+return ***3-4*x-9 
+
+In [59]: falsePosition (2,3,0.00001) 
+
+2. Write Python program to estimate the value of the 
+
+In [62]: def trapezoidal(a,b,n): 
+h=(b-a)/n 
+I=f(a)+f(b) 
+for i in range(1,n): 
+k=a+i*h 
+I=I+2*f(k) 
+I=I* (h/2) 
+return I 
+
+In [64]: def f(x): 
+return 1/(1+x)
+In [66]: trapezoidal (2,10,8) 
+
